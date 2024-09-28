@@ -2,6 +2,7 @@ using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
 using get_employee_lambda_function.Services;
 using static get_employee_lambda_function.Helpers.ValidationHelper;
+using static get_employee_lambda_function.Helpers.ApiHelper;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
