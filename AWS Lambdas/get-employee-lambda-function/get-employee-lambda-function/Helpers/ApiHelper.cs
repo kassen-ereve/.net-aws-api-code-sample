@@ -1,4 +1,5 @@
-﻿using Amazon.Lambda.APIGatewayEvents;
+﻿using Amazon.DynamoDBv2.Model;
+using Amazon.Lambda.APIGatewayEvents;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,21 @@ namespace get_employee_lambda_function.Helpers
             return GetResponse(body: JsonSerializer.Serialize(jsonError), statusCode: (int)HttpStatusCode.NotFound);
         }
 
+        public static IEnumerable<Dictionary<string, string>> SearchEmployees(string searchText, IEnumerable<Dictionary<string, string>> employeeList) =>
+            employeeList.Where(circuit =>
+                circuit.ContainsKey("EmployeeName") && circuit["EmployeeName"].Contains(searchText, StringComparison.OrdinalIgnoreCase)
+        ).ToList();
+
+        public static Dictionary<string, string> GetStringAttributes(Dictionary<string, AttributeValue> attributeList)
+        {
+            var circuit = attributeList
+                    .ToDictionary(
+                    kvp => kvp.Key,
+                    kvp => kvp.Value?.S ?? "" // NOTE: Might need to update this in the future incase we decided to store non-string column to DynamoDB
+                );
+
+            return circuit;
+        }
 
         public static string GetCloudwatchErrorLog(APIGatewayProxyRequest apiRequest, Exception exception)
         {
