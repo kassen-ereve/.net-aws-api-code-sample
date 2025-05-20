@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "get-employee-lambda-function", "get-employee-lambda-function.csproj", "{3F4136F2-B573-4D03-BA77-D16CAE752B15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "get-employee-lambda-function", "get-employee-lambda-function.csproj", "{AC0048AE-45E5-451F-B895-FEBB1CDFD9B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "get-employee-lambda-function-unittest", "get-employee-lambda-function-unittest\get-employee-lambda-function-unittest.csproj", "{A70636FA-9385-4B33-BAB9-894C54493854}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3F4136F2-B573-4D03-BA77-D16CAE752B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F4136F2-B573-4D03-BA77-D16CAE752B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F4136F2-B573-4D03-BA77-D16CAE752B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F4136F2-B573-4D03-BA77-D16CAE752B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC0048AE-45E5-451F-B895-FEBB1CDFD9B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0048AE-45E5-451F-B895-FEBB1CDFD9B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0048AE-45E5-451F-B895-FEBB1CDFD9B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC0048AE-45E5-451F-B895-FEBB1CDFD9B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70636FA-9385-4B33-BAB9-894C54493854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70636FA-9385-4B33-BAB9-894C54493854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70636FA-9385-4B33-BAB9-894C54493854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70636FA-9385-4B33-BAB9-894C54493854}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5D759A93-CB84-470D-A4DB-77EBBC1E6737}
+		SolutionGuid = {46D935FD-11D1-4C06-BA5E-7DB71B01BA50}
 	EndGlobalSection
 EndGlobal
