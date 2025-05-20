@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "get-employee-lambda-function", "..\get-employee-lambda-function\get-employee-lambda-function\get-employee-lambda-function.csproj", "{016DB747-DE7C-4684-870D-E92AC318D1EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{016DB747-DE7C-4684-870D-E92AC318D1EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{016DB747-DE7C-4684-870D-E92AC318D1EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{016DB747-DE7C-4684-870D-E92AC318D1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{016DB747-DE7C-4684-870D-E92AC318D1EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {789012EC-755F-4D33-86A0-A6569A82FFED}
+	EndGlobalSection
+EndGlobal
