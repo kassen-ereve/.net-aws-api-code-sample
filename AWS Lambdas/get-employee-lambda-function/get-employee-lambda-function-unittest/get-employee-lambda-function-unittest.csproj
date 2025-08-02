@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\get-employee-lambda-function.csproj" />
+    <ProjectReference Include="..\get-employee-lambda-function\get-employee-lambda-function.csproj" />
   </ItemGroup>
 
   <ItemGroup>
