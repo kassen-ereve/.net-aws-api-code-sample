@@ -3,7 +3,7 @@ using Amazon.Lambda.APIGatewayEvents;
 using get_employee_lambda_function.Helpers;
 using System.Net;
 
-namespace get_employee_lambda_function_unittest
+namespace get_employee_lambda_function_unittest.Helpers
 {
     public class ApiHelperTests
     {
