@@ -30,5 +30,20 @@ namespace get_employee_lambda_function.Services
 
             return GetSuccessResponseJSON<IEnumerable<Dictionary<string, string>>>(result);
         }
+
+        Task<APIGatewayProxyResponse> IApiService.GetAllEmployeesAsync(APIGatewayProxyRequest apiRequest, IDynamoDBService dynamoDBService)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<APIGatewayProxyResponse> IApiService.GetByCompanyIDAsync(APIGatewayProxyRequest apiRequest, IDynamoDBService dynamoDBService)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<APIGatewayProxyResponse> IApiService.GetByEmployeeIDAsync(APIGatewayProxyRequest apiRequest, IDynamoDBService dynamoDBService)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
