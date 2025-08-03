@@ -42,7 +42,7 @@ namespace get_employee_lambda_function.Services
             apiRequest.QueryStringParameters?.TryGetValue("EmployeeName", out searchText);
 
             if (apiRequest.PathParameters == null || !apiRequest.PathParameters.Any() || string.IsNullOrWhiteSpace(companyID))
-                return GetBadRequestResponse(message: "Missing required 'CompanyID' on endpoint [/employee/company/{CompanyID}]");
+                return GetBadRequestResponse(message: "Missing required CompanyID on endpoint [/employee/company/{CompanyID}]");
 
             var idValidationResult = ValidationHelper.ValidateCompanyID(companyID: companyID);
 

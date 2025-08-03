@@ -30,7 +30,7 @@ namespace get_employee_lambda_function_unittest
         [Fact]
         public async void FunctionHandlerAsync_should_call_GetByEmployeeIDAsync_if_correct_end_point_resource()
         {
-            var request = new APIGatewayProxyRequest { Resource = "/employee/{employeeID}", HttpMethod = "GET" };
+            var request = new APIGatewayProxyRequest { Resource = "/employee/{EmployeeID}", HttpMethod = "GET" };
 
             await targetClass.FunctionHandlerAsync(request, lambdaContextMock.Object);
 
