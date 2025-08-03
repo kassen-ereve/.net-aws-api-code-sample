@@ -18,10 +18,15 @@ namespace get_employee_lambda_function.Services
 
     public class DynamoDBService : IDynamoDBService
     {
-        const string MainTable = "EFD";
+        const string MainTable = "Main";
         const string Entity = "Employee";
 
-        private static readonly AmazonDynamoDBClient dynamoDBClient = new();
+        private readonly IAmazonDynamoDB _dynamoDBClient;
+
+        public DynamoDBService(IAmazonDynamoDB dynamoDBClient = null)
+        {
+            _dynamoDBClient = dynamoDBClient ?? new AmazonDynamoDBClient();
+        }
 
         private async Task<IEnumerable<Dictionary<string, string>>> GetCircuitsAsync(QueryRequest request)
         {
@@ -32,7 +37,7 @@ namespace get_employee_lambda_function.Services
                 // DynamoDB returns paginated data; set the start key to continue from the last evaluated key
                 request.ExclusiveStartKey = lastEvaluatedKey;
 
-                QueryResponse response = await dynamoDBClient.QueryAsync(request);
+                QueryResponse response = await _dynamoDBClient.QueryAsync(request);
                 foreach (Dictionary<string, AttributeValue> attributeList in response.Items)
                 {
                     var circuit = ApiHelper.GetStringAttributes(attributeList: attributeList);
