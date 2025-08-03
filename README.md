@@ -26,9 +26,8 @@ You don't need to set up AWS or run the project locally to test the API. Simply 
 
 1. **Access Swagger UI**: 
    After deployment, Swagger UI will be available at:  
-   `https://your-api-gateway-url/swagger`
+   `Not yet live`
 
-   (Replace `your-api-gateway-url` with the actual URL of your deployed API Gateway.)
 
 2. **Test API Endpoints**: 
    Use the Swagger UI to test the following operations:
