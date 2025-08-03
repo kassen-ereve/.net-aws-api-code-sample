@@ -33,7 +33,7 @@ public class Function
             {
                 case "/employee":
                     return await ApiService.GetAllEmployeesAsync(apiRequest: apiRequest, dynamoDBService: DynamoDBService);
-                case "/employee/{employeeID}":
+                case "/employee/{EmployeeID}":
                     return await ApiService.GetByEmployeeIDAsync(apiRequest: apiRequest, dynamoDBService: DynamoDBService);
                 case "/employee/company/{CompanyID}":
                     return await ApiService.GetByCompanyIDAsync(apiRequest: apiRequest, dynamoDBService: DynamoDBService);

@@ -12,6 +12,8 @@ namespace get_employee_lambda_function.Services
     public interface IDynamoDBService
     {
         Task<IEnumerable<Dictionary<string, string>>> GetAllEmployeesAsync();
+        Task<IEnumerable<Dictionary<string, string>>> GetEmployeesByCompanyIDAsync(string companyID);
+        Task<Dictionary<string, string>> GetEmployeesByIDAsync(string employeeID);
     }
 
     public class DynamoDBService : IDynamoDBService
@@ -27,6 +29,7 @@ namespace get_employee_lambda_function.Services
             Dictionary<string, AttributeValue>? lastEvaluatedKey = null;
             do
             {
+                // DynamoDB returns paginated data; set the start key to continue from the last evaluated key
                 request.ExclusiveStartKey = lastEvaluatedKey;
 
                 QueryResponse response = await dynamoDBClient.QueryAsync(request);
@@ -53,6 +56,35 @@ namespace get_employee_lambda_function.Services
             };
 
             return await GetCircuitsAsync(request: request);
+        }
+
+        public async Task<IEnumerable<Dictionary<string, string>>> GetEmployeesByCompanyIDAsync(string companyID)
+        {
+            var request = new QueryRequest
+            {
+                TableName = MainTable,
+                KeyConditionExpression = "Entity = :v_entity and begins_with (EntityID, :v_entityid)",
+                ExpressionAttributeValues = new Dictionary<string, AttributeValue> {
+                            {":v_entity", new AttributeValue { S = Entity }},
+                            {":v_entityid", new AttributeValue { S = companyID }}}
+            };
+
+            return await GetCircuitsAsync(request: request);
+        }
+
+        public async Task<Dictionary<string, string>> GetEmployeesByIDAsync(string employeeID)
+        {
+            var request = new QueryRequest
+            {
+                TableName = MainTable,
+                KeyConditionExpression = "Entity = :v_entity and EntityID = :v_entityid",
+                ExpressionAttributeValues = new Dictionary<string, AttributeValue> {
+                            {":v_entity", new AttributeValue { S = Entity }},
+                            {":v_entityid", new AttributeValue { S = employeeID }}}
+            };
+
+            var queryResult = await GetCircuitsAsync(request: request);
+            return queryResult.FirstOrDefault();
         }
     }
 }
